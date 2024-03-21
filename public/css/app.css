@@ -1,0 +1,28 @@
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+
+/*layout*/
+.welcome{
+    color: black;
+
+}
+.welcome-container{
+    margin-right:1vw
+}
+
+.lang-en{
+   color:rgb(145, 161, 248);
+}
+.lang-fr{
+    color: rgb(252, 151, 151);
+}
