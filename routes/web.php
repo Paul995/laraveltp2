@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 use App\Controllers\VillesController;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\SharedDocumentController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\SetLocaleController;
-use App\Http\Controllers\ForumController;
+use App\Http\Controllers\ForumPostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -53,5 +54,19 @@ Route::get('/logout', [AuthController::class, 'destroy'])->name('logout');
 // lang
 Route::get('/lang/{locale}', [SetLocaleController::class, 'index'])->name('lang');
 
-//FORUM
-Route::get('/forum', [ForumController::class, 'index'])->name('forum.index');
+
+Route::middleware(['auth'])->group(function () {
+    //forum
+    Route::get('/forum', [ForumPostController::class, 'index'])->name('forum.index');
+    Route::get('/forum/create', [ForumPostController::class, 'create'])->name('forum.create');
+    Route::post('/forum', [ForumPostController::class, 'store'])->name('forum.store');
+    Route::get('/forum/{post}/edit', [ForumPostController::class, 'edit'])->name('forum.edit');
+    Route::put('/forum/{post}', [ForumPostController::class, 'update'])->name('forum.update');
+    Route::delete('/forum/{post}', [ForumPostController::class, 'destroy'])->name('forum.destroy');
+
+    //documents
+    Route::get('/document', [SharedDocumentController::class, 'index'])->name('documents.index');
+    Route::get('/document/create', [SharedDocumentController::class, 'create'])->name('documents.create');
+    Route::post('/document', [SharedDocumentController::class, 'store'])->name('documents.store');
+
+});

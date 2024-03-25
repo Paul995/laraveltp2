@@ -47,7 +47,6 @@ class UsersController extends Controller
                         'email' => 'required|string|max:255',
                         'date_de_naissance' => 'required|date', 
                         'ville_id' => 'required|integer'
-                   
                     ]);
             
             

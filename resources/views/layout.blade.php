@@ -30,9 +30,15 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('login')}}">Forum</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('login')}}">Documents</a>
+                            </li>
                         @else
                             <li class="nav-item">
                                 <a class="nav-link" href="{{route('forum.index')}}">Forum</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{route('documents.index')}}">Documents</a>
                             </li>
                         @endguest
 

@@ -4,8 +4,9 @@ return [
     'text_users' => 'Utilisateurs',
     'text_user' => 'Utilisateur',
     'text_login' => 'Connexion',
-    'text_logout' => 'D&eacute;onnexion',
-    'text_create_user' => 'Cr&eacute;er un nouveau compte',
+    'text_logout' => 'D&eacute;connexion',
+    'text_create_user' => 'Cr&eacute;er un compte',
+    'text_create_doc' => 'Ajouter un document',
 
     'text_welcome' => 'Bienvenue',
     'text_footer' => 'Tous Droits Réservés',
@@ -21,4 +22,10 @@ return [
     'text_btn_view' => 'D&eacute;tails',
     'text_btn_edit' => 'Modifier',
     'text_btn_delete' => 'Supprimer',
+
+    'text_docs_title' => 'Titre',
+    'text_docs_lang' => 'Langue',
+    'text_docs_shared' => 'Partagé par',
+    'text_docs_actions' => 'Actions',
+
 ];

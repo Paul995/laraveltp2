@@ -6,6 +6,7 @@ return [
     'text_login' => 'Login',
     'text_logout' => 'Logout',
     'text_create_user' => 'Create new user',
+    'text_create_doc' => 'Add New Document',
 
     'text_welcome' => 'Welcome',
     'text_footer' => 'All Rights Reserved',
@@ -20,5 +21,11 @@ return [
 
     'text_btn_view' => 'View Details',
     'text_btn_edit' => 'Edit',
-    'text_btn_delete' => 'Delete',  
+    'text_btn_delete' => 'Delete',
+    
+    'text_docs_title' => 'Title',
+    'text_docs_lang' => 'Language',
+    'text_docs_shared' => 'Shared by',
+    'text_docs_actions' => 'Actions',
+
 ];

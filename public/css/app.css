@@ -26,3 +26,10 @@ body {
 .lang-fr{
     color: rgb(252, 151, 151);
 }
+
+/*forum*/
+.article-forum{
+    border: 1px solid black;
+    margin: 20px 0;
+    padding: 10px;
+}
