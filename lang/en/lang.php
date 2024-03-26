@@ -27,5 +27,6 @@ return [
     'text_docs_lang' => 'Language',
     'text_docs_shared' => 'Shared by',
     'text_docs_actions' => 'Actions',
+    'text_docs_upload' => 'Upload',
 
 ];

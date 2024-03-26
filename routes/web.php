@@ -69,4 +69,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/document/create', [SharedDocumentController::class, 'create'])->name('documents.create');
     Route::post('/document', [SharedDocumentController::class, 'store'])->name('documents.store');
 
+    Route::get('/document/edit', [SharedDocumentController::class, 'store'])->name('documents.edit');
+    Route::put('/forum/{post}', [ForumPostController::class, 'update'])->name('forum.update');
+
 });
