@@ -27,18 +27,25 @@
     <!-- Formulaire de création d'un nouvel article -->
     @auth
     <div class="add-article">
-        <h2>Ajouter un nouvel article</h2>
+        <h2>@lang('lang.text_forum_add')</h2>
         <form action="{{ route('forum.store') }}" method="POST">
             @csrf <!-- CSRF token for security -->
             <div class="form-group">
-                <label for="title">Titre de l'article:</label>
+                <label for="title">@lang('lang.text_docs_title') :</label>
                 <input type="text" class="form-control" id="title" name="title" required>
             </div>
             <div class="form-group">
-                <label for="content">Contenu de l'article:</label>
+                <label for="language">@lang('lang.text_docs_lang') :</label>
+                <select name="language" id="language">
+                    <option value="fr">fr</option>
+                    <option value="en">en</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="content">@lang('lang.text_forum_content'):</label>
                 <textarea class="form-control" id="content" name="content" rows="5" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Publier</button>
+            <button type="submit" class="btn btn-primary">@lang('lang.text_btn_post')</button>
         </form>
     </div>
     @endauth

@@ -15,7 +15,7 @@
                     @method('PUT')
 
                     <div class="mb-3">
-                        <label for="title" class="form-label">Titre</label>
+                        <label for="title" class="form-label">@lang('lang.text_docs_title')</label>
                         <input type="text" name="title" id="title" class="form-control" value="{{ old('title', $post->title) }}">
                         @if($errors->has('title'))
                             <div class="text-danger mt-2">

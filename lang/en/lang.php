@@ -22,11 +22,16 @@ return [
     'text_btn_view' => 'View Details',
     'text_btn_edit' => 'Edit',
     'text_btn_delete' => 'Delete',
+    'text_btn_post' => 'Post',
+    'text_docs_view' => 'View',
     
     'text_docs_title' => 'Title',
     'text_docs_lang' => 'Language',
     'text_docs_shared' => 'Shared by',
     'text_docs_actions' => 'Actions',
     'text_docs_upload' => 'Upload',
+
+    'text_forum_content' => 'Content',
+    'text_forum_add' => 'Add Post',
 
 ];

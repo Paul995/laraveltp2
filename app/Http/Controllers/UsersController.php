@@ -91,17 +91,16 @@ class UsersController extends Controller
     public function update(Request $request, User $user)
     {
          //
-         $request->validate([
-            //      le "name" du input     max caracter length
-                        'nom' => 'required|string|max:255',
-                        'password' => 'min:6|max:20',
-                        'adresse' => 'required|string|max:255',
-                        'telephone' => 'required|string|max:25',
-                        'email' => 'required|string|max:255',
-                        'date_de_naissance' => 'required|date', 
-                        'ville_id' => 'required|integer'
-                   
-                    ]);
+            $request->validate([
+        //      le "name" du input     max caracter length
+                'nom' => 'required|string|max:255',
+                'password' => 'min:6|max:20',
+                'adresse' => 'required|string|max:255',
+                'telephone' => 'required|string|max:25',
+                'email' => 'required|string|max:255',
+                'date_de_naissance' => 'required|date', 
+                'ville_id' => 'required|integer'
+            ]);
     
             $user->update([
                 'nom' => $request->nom,

@@ -11,7 +11,7 @@
                 <th>@lang('lang.text_docs_lang')</th>
                 <th>@lang('lang.text_docs_shared')</th>
                 <th>Actions</th>
-                <th>view</th>
+                <th>@lang('lang.text_docs_view')</th>
             </tr>
         </thead>
         <tbody>
@@ -23,8 +23,9 @@
                 <td>
                     <!-- Les actions Modifier/Supprimer ici si l'utilisateur est l'auteur -->
                     @if ($document->user_id == auth()->id())
-                <a href="{{ route('forum.edit', $document->id) }}"><img src="{{ asset('icons/editer.svg') }}" style="width:30px;" alt="Edit icon"></a>
-                <form action="{{ route('forum.destroy', $document->id) }}" method="POST">
+                <a href="{{ route('documents.edit', $document->id) }}"><img src="{{ asset('icons/editer.svg') }}" style="width:30px;" alt="Edit icon"></a>
+
+                <form action="{{ route('documents.destroy', $document->id) }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <button type="submit">@lang('lang.text_btn_delete')</button>
@@ -33,10 +34,11 @@
                  @endif
                 </td>
                 <td>
-                   <a href="{{ asset($document->document_path)}}" target="_blank" class="btn">Voir</a>
+                   <a href="{{ asset($document->document_path)}}" target="_blank" class="btn">@lang('lang.text_docs_view')</a>
                 </td>
             </tr>
             @endforeach
+           
         </tbody>
     </table>
     <!-- Pagination -->

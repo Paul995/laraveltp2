@@ -10,33 +10,23 @@
                 <h2 class="card-title">Modifier le document</h2>
             </div>
             <div class="card-body">
-                <form action="{{ route('documents.update', $post->id) }}" method="POST">
-                    @csrf
-                    @method('PUT')
-
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Titre</label>
-                        <input type="text" name="title" id="title" class="form-control" value="{{ old('title', $post->title) }}">
-                        @if($errors->has('title'))
-                            <div class="text-danger mt-2">
-                                {{ $errors->first('title') }}
-                            </div>
-                        @endif
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="content" class="form-label">Contenu</label>
-                        <textarea name="content" id="content" class="form-control" rows="5">{{ old('content', $post->content) }}</textarea>
-                        @if($errors->has('content'))
-                            <div class="text-danger mt-2">
-                                {{ $errors->first('content') }}
-                            </div>
-                        @endif
-                    </div>
-                  
-                    <button type="submit" class="btn btn-primary" value="Sauvegarder les modifications">Sauvegarder</button>
-                    <a href="{{ route('forum.index') }}" class="btn btn-secondary">Annuler</a>
-                </form>
+            <form action="{{ route('documents.update', $document->id) }}" method="POST" enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
+                <label for="title">@lang('lang.text_docs_title') :</label>
+                <input type="text" name="title" id="title" value="{{ $document->title }}" required>
+                <br><br>
+                <label for="language">@lang('lang.text_docs_lang') :</label>
+                <select name="language" id="language">
+                        <option value="fr" {{ $document->language == 'fr' ? 'selected' : '' }}>fr</option>
+                        <option value="en" {{ $document->language == 'en' ? 'selected' : '' }}>en</option>
+                </select>
+                <br><br>
+                <label for="document_path">Document:</label>
+                <input type="file" name="document_path" id="document_path" required>
+                <br><br>
+                <button type="submit">@lang('lang.text_docs_upload')</button>
+            </form>
             </div>
         </div>
     </div>
